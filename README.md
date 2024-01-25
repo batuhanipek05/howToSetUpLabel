@@ -1,3 +1,40 @@
+Label Studio Kurulumu için öncelikler Git ve docker kurulumu gerekli.
+
+GIT:
+
+Git'i Windows'a kurmak oldukça basittir. Aşağıdaki adımları takip ederek Git'i Windows bilgisayarınıza kurabilirsiniz:
+
+1. **Git İndirme:**
+   Git'in en güncel sürümünü [Git resmi web sitesinden](https://git-scm.com/downloads) indirin. Sayfa üzerindeki "Windows" başlığı altındaki "Download" düğmesine tıklayarak indirme işlemini başlatabilirsiniz.
+
+2. **İndirilen Dosyayı Çalıştırın:**
+   İndirilen kurulum dosyasını çalıştırın (genellikle `.exe` uzantılıdır). Karşınıza gelen kurulum sihirbazındaki adımları takip edin.
+
+3. **Kurulum Ayarları:**
+   - "Select Components" ekranında, varsayılan ayarlar genellikle yeterlidir. İsterseniz ek özellikleri de seçebilirsiniz.
+   - "Choosing the default editor used by Git" ekranında, tercih ettiğiniz metin düzenleyiciyi seçebilirsiniz. Örneğin, Notepad++ veya Visual Studio Code gibi bir düzenleyici seçebilirsiniz.
+   - "Adjusting your PATH environment" ekranında, "Use Git from Git Bash only" seçeneğini seçebilirsiniz.
+
+4. **SSL/TLS Sertifikası Ayarları:**
+   "Choosing HTTPS transport backend" ekranında, "Use the OpenSSL library" seçeneğini işaretleyebilirsiniz.
+
+5. **İlerleme Çubuğu:**
+   Geriye doğru gitmek veya ilerlemek için uygun ekranlardaki ilgili düğmeleri kullanın ve kurulumun tamamlanmasını bekleyin.
+
+6. **Bitiş Ekranı:**
+   Kurulum tamamlandığında, "Finish" düğmesine tıklayarak kurulum sihirbazını kapatın.
+
+7. **Git Sürümünü Kontrol Etme:**
+   Git'in başarıyla kurulup kurulmadığını kontrol etmek için bir komut istemcisini (Command Prompt veya PowerShell) açın ve şu komutu çalıştırın:
+   ```bash
+   git --version
+   ```
+   Eğer Git başarıyla kurulduysa, sürüm numarasını göreceksiniz.
+
+Artık Git, Windows bilgisayarınızda kullanıma hazır olmalıdır. Git'inizi kullanmaya başlamak için bir komut istemcisini açın ve `git --version` komutunu kullanarak kurulumun başarıyla tamamlandığından emin olun.
+
+DOCKER:
+
 Docker Desktop'ı Windows üzerinde kurmak için şu adımları takip edebilirsiniz:
 
 1. **Docker Desktop'u İndirin:**
@@ -30,7 +67,7 @@ Her zaman en güncel ve doğru bilgiler için resmi Docker belgelerine başvurun
 
 
 
-
+LABEL STUDIO
 
 Docker ve Git'i kurduktan sonra, bir sonraki adım, Label Studio ML Backend git deposunu sistemimize klonlamaktır.
 
