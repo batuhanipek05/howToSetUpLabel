@@ -34,27 +34,32 @@ Her zaman en güncel ve doğru bilgiler için resmi Docker belgelerine başvurun
 
 Docker ve Git'i kurduktan sonra, bir sonraki adım, Label Studio ML Backend git deposunu sistemimize klonlamaktır.
 
-bash
-Copy code
+```bash
 git clone https://github.com/HumanSignal/label-studio-ml-backend.git
 cd label-studio-ml-backend/label_studio_ml/examples/segment_anything_model
+```
+
 Sonra, Docker İmajını oluşturun.
 
-bash
-Copy code
+```bash
 docker build . -t sam:latest
+```
+
 Bu işlem, modelin Docker imajına gömülmesi için 2.4 GB boyutundaki SAM model ağırlıklarını içerir ve internet bağlantı hızınıza bağlı olarak 20 dakikaya kadar sürebilir. Bu yapı süreci, üretim kullanımı için model ağırlıklarını güncellemelere ve checkpoint'leme olanak tanımak amacıyla model çalışma zamanından ayrı bir şekilde saklamak en iyi uygulamadır.
 
 Modelin oluşturulduğunu ve kullanıma hazır olduğunu doğrulayın.
 
-bash
-Copy code
+```bash
 docker image list
+```
+
 Docker, kullanılabilir imajların bir listesini çıkarmalıdır ve benzer bir giriş içeren bir girişle birlikte bir çıkış vermelidir:
 
-Copy code
+```
 REPOSITORY         TAG              IMAGE ID       CREATED         SIZE
 sam                latest           f69344cb96a5   5 minutes ago   4.61GB
+```
+
 SAM ML Backend'i kullanma
 
 İmaj oluşturulduktan sonra, Label Studio kullanarak bir görüntü segmentasyon projesi oluşturma zamanı geldi.
@@ -63,14 +68,12 @@ Label Studio'yu yükleyin
 
 Öncelikle, Label Studio'yu yüklemeniz gerekiyor. Bu örnekte, SAM ML Backend, yerel depolama sunumu etkinleştirilmiş olmalıdır. Bununla birlikte çalışan bir Label Studio örneği başlatmak için aşağıdaki komutu girin:
 
-bash
-Copy code
+```bash
 docker run -it -p 8080:8080 \
     -v $(pwd)/mydata:/label-studio/data \
     --env LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true \
     --env LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/data/images \
     heartexlabs/label-studio:latest
+```
+
 Bu komut, Docker'ın Label Studio'yu başlatmasını, http://localhost:8080 adresinden görüntülenmesini, veritabanını ve görev dosyalarını yerel sabit sürücünüze depolamasını ve yerel dosya sunumunu etkinleştirmesini söyler. Label Studio başladığında, tarayıcınızla http://localhost:8080 adresine giderek Label Studio giriş ekranıyla karşılaşacaksınız.
-
-
-
